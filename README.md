@@ -51,4 +51,4 @@ Frontend: [https://deepakcoding.netlify.app/](https://deepakcoding.netlify.app/)
 
 ## 📁 Folder Structure
 
-"# portfolio-projects-" 
+"# portfolio-projects" 
