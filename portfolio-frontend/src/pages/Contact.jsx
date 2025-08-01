@@ -63,7 +63,7 @@ const Contact = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        `http://localhost:3500/contact`,
+        `https://deepakkhiraofficail.onrender.com/contact`,
         formData,
         {
           headers: { "Content-Type": "application/json" },
