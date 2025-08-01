@@ -21,7 +21,9 @@ app.use(express.json());
 app.use(
   cors({
     origin: process.env.CLIENT_URL || "http://localhost:5173",
-    methods: ["POST"],
+    methods: ["POST", "GET", "OPTIONS", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "application/json"],
+    credentials: true,
   })
 );
 
@@ -72,5 +74,8 @@ app.get("*", (req, res) => {
 
 // ✅ Start server
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(`✅ Server running on ${process.env.VITE_BACKEND_URL || `http://localhost:${PORT}`}`);
+  console.log(`✅ Frontend served from ${DIST_PATH}`);  
+  console.log(`✅ CORS enabled for ${process.env.CLIENT_URL || "http://localhost:5173"}`);
+  console.log(`✅ Environment: ${process.env.NODE_ENV || "development"}`);
 });
