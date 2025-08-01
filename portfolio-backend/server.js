@@ -21,8 +21,6 @@ app.use(express.json());
 app.use(
   cors({
     origin: process.env.CLIENT_URL || "http://localhost:5173",
-    methods: ["POST", "GET", "OPTIONS", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "application/json"],
     credentials: true,
   })
 );

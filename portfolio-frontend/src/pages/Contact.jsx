@@ -78,8 +78,9 @@ const Contact = () => {
     } catch (err) {
       console.error("Contact form error:", err);
       toast.error(
-        err?.response?.data?.error || "Server error. Try again later."
+        err?.response?.data?.error || err?.message || "Server error. Try again later."
       );
+      
     } finally {
       setLoading(false);
     }
@@ -190,7 +191,7 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              className={`px-6 py-3 rounded-lg text-white transition ${loading ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
               disabled={loading}
             >
               {loading ? "Sending..." : "Send Message"}
