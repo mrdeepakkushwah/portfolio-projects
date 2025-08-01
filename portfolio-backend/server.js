@@ -2,9 +2,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import nodemailer from "nodemailer";
 import path from "path";
 import { fileURLToPath } from "url";
+import contactRoutes from "./routes/contact-routes.js";
 
 // Load environment variables
 dotenv.config();
@@ -16,9 +16,9 @@ const PORT = process.env.PORT || 3500;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+
 // ✅ Middleware
 app.use(express.json());
-// console.log(process.env.CLIENT_URL)
 app.use(
   cors({
     origin:
@@ -28,40 +28,7 @@ app.use(
 );
 
 // ✅ Contact Route
-app.post("/contact", async (req, res) => {
-  const { name, email, message } = req.body;
-
-  if (!name || !email || !message) {
-    return res
-      .status(400)
-      .json({ success: false, error: "All fields are required." });
-  }
-
-  try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-      replyTo: email,
-      to: process.env.EMAIL_USER,
-      subject: `New message from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-    });
-
-    return res
-      .status(200)
-      .json({ success: true, message: "Message sent successfully!" });
-  } catch (error) {
-    console.error("❌ Error sending email:", error);
-    return res.status(500).json({ success: false, error: "Failed to send message.",error });
-  }
-});
+app.use("/contact", contactRoutes);
 
 // ✅ Serve frontend (static files)
 const DIST_PATH = path.join(__dirname, "dist");
