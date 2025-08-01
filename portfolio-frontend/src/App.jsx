@@ -10,6 +10,7 @@ const Projects = lazy(() => import("./pages/Projects"));
 const Skills = lazy(() => import("./components/SkillBadge"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Achievements = lazy(() => import("./pages/Achievements"));
+const CookieBanner = lazy(() => import("./components/CookieBanner"));
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/achievements" element={<Achievements />} />
             </Routes>
+            <CookieBanner />
           </Suspense>
         </main>
         <Footer />
