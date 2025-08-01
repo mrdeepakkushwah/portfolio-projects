@@ -33,18 +33,18 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12">
+    <footer className="bg-gray-900 text-gray-100 py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo and copyright */}
           <div className="mb-6 md:mb-0">
             <Link
               to="/"
-              className="text-2xl font-bold text-white hover:text-blue-400 transition"
+              className="text-2xl font-bold text-white hover:text-blue-300 transition"
             >
               Deepak Kushwah
             </Link>
-            <p className="mt-2 text-sm">
+            <p className="mt-2 text-sm text-gray-200">
               Full Stack Developer | MERN Specialist
             </p>
           </div>
@@ -55,19 +55,19 @@ const Footer = () => {
             <div className="flex flex-col space-y-2">
               <Link
                 to="/about"
-                className="hover:text-blue-400 transition text-sm"
+                className="hover:text-blue-300 transition text-sm"
               >
                 About Me
               </Link>
               <Link
                 to="/projects"
-                className="hover:text-blue-400 transition text-sm"
+                className="hover:text-blue-300 transition text-sm"
               >
                 Projects
               </Link>
               <Link
                 to="/achievements"
-                className="hover:text-blue-400 transition text-sm"
+                className="hover:text-blue-300 transition text-sm"
               >
                 Achievements
               </Link>
@@ -80,13 +80,13 @@ const Footer = () => {
             <div className="flex flex-col space-y-2 text-sm">
               <a
                 href="mailto:deepakkushwah475110@gmail.com"
-                className="hover:text-blue-400 transition"
+                className="hover:text-blue-300 transition"
               >
                 deepakkushwah475110@gmail.com
               </a>
               <a
                 href="tel:+919109001109"
-                className="hover:text-blue-400 transition"
+                className="hover:text-blue-300 transition"
               >
                 +91 9109001109
               </a>
@@ -118,7 +118,7 @@ const Footer = () => {
           <p>
             &copy; {new Date().getFullYear()} Deepak Kushwah. All rights reserved.
           </p>
-          <p className="mt-1 text-xs text-gray-500">
+          <p className="mt-1 text-xs text-gray-300">
             Built with React, Tailwind CSS, and ❤️
           </p>
         </div>

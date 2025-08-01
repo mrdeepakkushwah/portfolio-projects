@@ -8,6 +8,23 @@ const Home = () => {
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 md:py-32">
         <div className="max-w-4xl mx-auto">
+          {/* Profile Image */}
+          <div className="flex justify-center mb-6">
+            <img
+              src="/profile.jpg"
+              srcSet="/profile.jpg 300w, /profile.jpg 600w, /profile.jpg 900w"
+              sizes="(max-width: 600px) 300px, (max-width: 900px) 600px, 900px"
+              width="300"
+              height="300"
+              alt="Deepak Kushwah"
+              className="rounded-full shadow-lg border-2 border-gray-200"
+              loading="lazy"
+              fetchPriority="high"  
+            />
+
+
+          </div>
+
           <p className="text-blue-600 font-medium mb-3">Hello, I'm</p>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
             Deepak Kushwah
@@ -45,7 +62,6 @@ const Home = () => {
             <h3 className="font-semibold text-gray-800 mb-2">Frontend</h3>
             <p className="text-gray-600 text-sm">React, JavaScript, Tailwind CSS</p>
           </div>
-
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
             <div className="text-green-600 mb-3 flex justify-center">
               <FaServer className="text-3xl" />
@@ -53,7 +69,6 @@ const Home = () => {
             <h3 className="font-semibold text-gray-800 mb-2">Backend</h3>
             <p className="text-gray-600 text-sm">Node.js, Express, Java</p>
           </div>
-
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
             <div className="text-purple-600 mb-3 flex justify-center">
               <FaDatabase className="text-3xl" />
@@ -61,7 +76,6 @@ const Home = () => {
             <h3 className="font-semibold text-gray-800 mb-2">Database</h3>
             <p className="text-gray-600 text-sm">MongoDB, SQL</p>
           </div>
-
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
             <div className="text-orange-600 mb-3 flex justify-center">
               <FaMobileAlt className="text-3xl" />
@@ -123,6 +137,6 @@ const Home = () => {
       </section>
     </div>
   );
-}
+};
 
 export default Home;

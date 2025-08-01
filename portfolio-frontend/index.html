@@ -7,6 +7,7 @@
     <!-- Preconnect and Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="/profile.jpg" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
     <noscript>
@@ -47,7 +48,9 @@
   
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="skeleton-loader"></div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
 
     <!-- JSON-LD Structured Data -->
