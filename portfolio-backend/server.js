@@ -18,9 +18,11 @@ const __dirname = path.dirname(__filename);
 
 // ✅ Middleware
 app.use(express.json());
+// console.log(process.env.CLIENT_URL)
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin:
+      process.env.CLIENT_URL || "https://deepakkhiraofficial.netlify.app/",
     credentials: true,
   })
 );
@@ -52,12 +54,12 @@ app.post("/contact", async (req, res) => {
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });
 
-    res
+    return res
       .status(200)
       .json({ success: true, message: "Message sent successfully!" });
   } catch (error) {
     console.error("❌ Error sending email:", error);
-    res.status(500).json({ success: false, error: "Failed to send message.",error });
+    return res.status(500).json({ success: false, error: "Failed to send message.",error });
   }
 });
 
