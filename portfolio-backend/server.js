@@ -15,7 +15,9 @@ const app = express();
 const PORT = process.env.PORT || 3500;
 
 const __filename = fileURLToPath(import.meta.url);
+console.log("filename", __filename);
 const __dirname = path.dirname(__filename);
+console.log("dirname", __dirname);
 
 // Allowed origins for CORS - add all your frontend URLs here
 const allowedOrigins = [
@@ -72,11 +74,13 @@ app.use("/contact", contactRoutes);
 
 // Serve frontend static files from "dist" folder
 const DIST_PATH = path.join(__dirname, "dist");
+// console.log("dist path", DIST_PATH);
 app.use(express.static(DIST_PATH));
 
 // SPA fallback: serve index.html for all unknown routes (frontend routing support)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(DIST_PATH, "index.html"));
+  res.sendFile(path.join(DIST_PATH, 'index.html'));
+
 });
 
 // Centralized error handling middleware
