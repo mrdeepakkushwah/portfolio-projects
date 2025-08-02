@@ -7,17 +7,17 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <FaGithub className="text-xl" />,
-      url: "https://github.com/mrdeepakkushwah",
+      url: "https://github.com/deepakkhiraofficail",
       label: "GitHub"
     },
     {
       icon: <FaLinkedin className="text-xl" />,
-      url: "https://www.linkedin.com/in/mrdeepakkushwah/",
+      url: "https://www.linkedin.com/in/deepakkhiraofficail/",
       label: "LinkedIn"
     },
     {
       icon: <SiLeetcode className="text-xl" />,
-      url: "https://leetcode.com/mrdeepakkushwah",
+      url: "https://leetcode.com/deepakkhiraofficail/",
       label: "LeetCode"
     },
     {
