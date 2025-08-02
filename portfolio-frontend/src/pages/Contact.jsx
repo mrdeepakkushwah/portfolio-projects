@@ -23,22 +23,22 @@ const Contact = () => {
   const socialLinks = [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/mrdeepakkushwah",
+      url: "https://www.linkedin.com/in/deepakkhiraofficail",
       icon: <FaLinkedin />,
     },
     {
       name: "GitHub",
-      url: "https://github.com/mrdeepakkushwah",
+      url: "https://github.com/deepakkhiraofficail",
       icon: <FaGithub />,
     },
     {
       name: "Facebook",
-      url: "https://www.facebook.com/MrDeepakKushwahJi/",
+      url: "https://www.facebook.com/deepakkhiraofficail/",
       icon: <FaFacebook />,
     },
     {
       name: "Instagram",
-      url: "https://www.instagram.com/frontendwithdeepak/",
+      url: "https://www.instagram.com/deepakkhiraofficail/",
       icon: <FaInstagram />,
     },
   ];
@@ -63,7 +63,7 @@ const Contact = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        `https://deepakkhiraofficail.onrender.com/contact`,{
+        "https://deepakkhiraofficail.onrender.com/contact",{
         name : formData.name,
         email : formData.email, 
         message : formData.message

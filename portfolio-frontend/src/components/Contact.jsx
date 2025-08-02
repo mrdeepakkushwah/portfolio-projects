@@ -6,8 +6,8 @@ const Contact = () => {
             <h2>Contact Me</h2>
             <p>Phone: +91-9109001109</p>
             <p>Email: deepakkushwah475110@gmail.com</p>
-            <p><a href="https://linkedin.com/in/your-profile">LinkedIn</a></p>
-            <p><a href="https://github.com/your-profile">GitHub</a></p>
+            <p><a href="https://linkedin.com/in/deepakkhiraofficail">LinkedIn</a></p>
+            <p><a href="https://github.com/deepakkhiraofficail">GitHub</a></p>
         </section>
     );
 };
