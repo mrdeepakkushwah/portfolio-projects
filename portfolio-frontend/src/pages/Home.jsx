@@ -12,7 +12,7 @@ const Home = () => {
           <div className="flex justify-center mb-6">
             <picture>
               <source srcSet="/deepak.webp" type="image/webp/jpg/jpeg" />
-              <img
+              {/* <img
                 src="/deepak.jpg"
                 width="371"
                 height="445"
@@ -20,7 +20,19 @@ const Home = () => {
                 className="rounded-full shadow-lg border-2 border-gray-200"
                 // loading="lazy"
                 fetchPriority="high"
+              /> */}
+              <img
+                src="/deepak.jpg"
+                srcset="/deepak.jpg 1x, /deepak@2x.jpg 2x"
+                alt="Deepak Kushwah"
+                width="371"
+                height="445"
+                fetchpriority="high"
+                decoding="async"
+                class="rounded-full shadow-lg border-2 border-gray-200"
+                style="max-inline-size: 100%; block-size: auto;"
               />
+
             </picture>
 
 
