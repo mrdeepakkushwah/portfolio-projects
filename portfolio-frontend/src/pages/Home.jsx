@@ -11,7 +11,7 @@ const Home = () => {
           {/* Profile Image */}
           <div className="flex justify-center mb-6">
             <picture>
-              <source srcSet="/deepak.webp" type="image/webp/jpg" />
+              <source srcSet="/deepak.webp" type="image/webp/jpg/jpeg" />
               <img
                 src="/deepak.jpg"
                 width="371"
