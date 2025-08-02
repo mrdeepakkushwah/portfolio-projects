@@ -1,5 +1,15 @@
 import nodemailer from "nodemailer";
 
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
+
+const emailRegex = /^\S+@\S+\.\S+$/;
+
 const contact = async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -9,21 +19,20 @@ const contact = async (req, res) => {
       .json({ success: false, error: "All fields are required." });
   }
 
-  try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+  if (!emailRegex.test(email)) {
+    return res
+      .status(400)
+      .json({ success: false, error: "Invalid email address." });
+  }
 
+  try {
     const mailOptions = {
       from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
       replyTo: email,
       to: process.env.EMAIL_USER,
       subject: `New message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      // html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong><br/>${message}</p>`,
     };
 
     const info = await transporter.sendMail(mailOptions);
