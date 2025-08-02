@@ -11,17 +11,16 @@ const Home = () => {
           {/* Profile Image */}
           <div className="flex justify-center mb-6">
             <picture>
-              <source srcSet="/deepak.webp" type="image/webp/jpg/jpeg" />
+              <source srcSet="/deepak.webp" type="image/webp/jpg" />
               <img
                 src="/deepak.jpg"
                 width="371"
                 height="445"
                 alt="Deepak Kushwah"
                 className="rounded-full shadow-lg border-2 border-gray-200"
-                // loading="lazy"
-                fetchPriority="high"
                 decoding="async"
-                style="max-inline-size: 100%; block-size: auto;"
+                fetchPriority="high"
+                style={{ maxInlineSize: "100%", blockSize: "auto" }}
               />
             </picture>
 
