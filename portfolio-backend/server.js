@@ -21,7 +21,7 @@ const __dirname = path.dirname(__filename);
 app.use(
   cors({
     origin:
-      process.env.CLIENT_URL || "https://deepakkhiraofficial.netlify.app/",
+      process.env.CLIENT_URL || "https://deepakkhiraofficial.netlify.app",
     credentials: true,
   })
 );
