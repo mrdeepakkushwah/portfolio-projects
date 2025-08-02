@@ -1,6 +1,4 @@
 import express from "express";  
-// contact-routes.js
-// Import necessary modules
 const router = express.Router();
 import contact from "../controller/contact-controller.js";
 

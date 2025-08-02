@@ -1,13 +1,13 @@
 // server.js
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 import contactRoutes from "./routes/contact-routes.js";
 
 // Load environment variables
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3500;
@@ -18,17 +18,17 @@ const __dirname = path.dirname(__filename);
 
 
 // ✅ Middleware
-app.use(express.json());
 app.use(
   cors({
     origin:
-      process.env.CLIENT_URL || "https://deepakkhiraofficial.netlify.app/",
+    process.env.CLIENT_URL || "https://deepakkhiraofficial.netlify.app",
     credentials: true,
   })
 );
+app.use(express.json());
 
 // ✅ Contact Route
-app.use("/contact", contactRoutes);
+app.use('/contact', contactRoutes);
 
 // ✅ Serve frontend (static files)
 const DIST_PATH = path.join(__dirname, "dist");
