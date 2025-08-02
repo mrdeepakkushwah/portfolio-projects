@@ -78,7 +78,7 @@ const Contact = () => {
     } catch (err) {
       console.error("Contact form error:", err);
       toast.error(
-        err?.response?.data?.error || err?.message || "Server error. Try again later."
+        err?.response?.data?.error || err?.message || "Server error. Try again later.."
       );
       
     } finally {
