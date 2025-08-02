@@ -18,7 +18,7 @@ const Home = () => {
                 height="445"
                 alt="Deepak Kushwah"
                 className="rounded-full shadow-lg border-2 border-gray-200"
-                loading="lazy"
+                // loading="lazy"
                 fetchPriority="high"
               />
             </picture>
