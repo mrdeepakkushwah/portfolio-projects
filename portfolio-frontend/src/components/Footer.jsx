@@ -12,12 +12,12 @@ const Footer = () => {
     },
     {
       icon: <FaLinkedin className="text-xl" />,
-      url: "https://www.linkedin.com/in/deepakkhiraoffical/",
+      url: "https://www.linkedin.com/in/deepakkhiraofficial/",
       label: "LinkedIn"
     },
     {
       icon: <SiLeetcode className="text-xl" />,
-      url: "https://leetcode.com/deepakkhiraofficail/",
+      url: "https://leetcode.com/deepakkhiraofficial/",
       label: "LeetCode"
     },
     {
@@ -27,7 +27,7 @@ const Footer = () => {
     },
     {
       icon: <FaFilePdf className="text-xl" />,
-      url: "/Deepak_Kushwah_Resume.pdf",  // No spaces in filename or replace spaces with %20
+      url: "../assets/Deepak_Kushwah_ Resume.pdf",  // No spaces in filename or replace spaces with %20
       label: "Resume"
     }
   ];

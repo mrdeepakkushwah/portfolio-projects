@@ -14,15 +14,15 @@ const ProjectCard = () => {
             id: 1,
             title: "Simple Banking Application",
             description: "Console-based app with secure transactions. (Java, File Handling)",
-            codeUrl: "https://github.com/mrdeepakkushwah/Simple-Bank-Application.git",
-            liveUrl: "https://github.com/mrdeepakkushwah/Simple-Bank-Application.git",
+            codeUrl: "https://github.com/deepakkhiraofficial/Simple-Bank-Application.git",
+            liveUrl: "https://github.com/deepakkhiraofficial/Simple-Bank-Application.git",
         },
         {
             id: 2,
             title: "Random User Data Website",
             description: "Dynamic UI with Local Storage integration. (JavaScript, Fetch API)",
-            codeUrl: "https://github.com/mrdeepakkushwah/Random-User-Application-.git",
-            liveUrl: "https://github.com/mrdeepakkushwah/Random-User-Application-.git",
+            codeUrl: "https://github.com/deepakkhiraofficial/Random-User-Application-.git",
+            liveUrl: "https://github.com/deepakkhiraofficial/Random-User-Application-.git",
         },
     ];
 

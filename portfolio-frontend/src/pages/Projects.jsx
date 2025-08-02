@@ -10,7 +10,7 @@ const Projects = () => {
       description:
         "Console-based banking app with deposit, withdrawal, and balance inquiry functionalities using secure password protection.",
       tech: ["Java", "File Handling", "OOP"],
-      github: "https://github.com/mrdeepakkushwah/Simple-Bank-Application.git",
+      github: "https://github.com/deepakkhiraofficial/Simple-Bank-Application.git",
       demo: null,
       period: "Mar 2024 - June 2024",
     },
@@ -19,7 +19,7 @@ const Projects = () => {
       description:
         "Dynamic UI that fetches and displays random user data with Local Storage persistence.",
       tech: ["HTML", "CSS", "JavaScript", "Fetch API"],
-      github: "https://github.com/mrdeepakkushwah/Random-User-Application-.git",
+      github: "https://github.com/deepakkhiraofficial/Random-User-Application-.git",
       demo: "https://randomuserapplication.netlify.app/",
       period: "Feb 2024 - Apr 2024",
     },
@@ -31,8 +31,8 @@ const Projects = () => {
 ✔ Answer review to learn from mistakes
 ✔ Mobile-friendly design`,
       tech: ["HTML", "CSS", "JavaScript", "React.js", "UML"],
-      github: "https://github.com/mrdeepakkushwah/Quiz-Application-.git",
-      demo: "https://mrdeepakkushwah.github.io/Quiz-Application-/", // fixed demo to live URL (you may update)
+      github: "https://github.com/deepakkhiraofficial/Quiz-Application-.git",
+      demo: "https://deepakkhiraofficial.github.io/Quiz-Application-/", // fixed demo to live URL (you may update)
       period: "Mar 2025",
     },
     {
@@ -40,7 +40,7 @@ const Projects = () => {
       description:
         "React Todo App with CRUD operations: create, update, delete todos, delete all todos, and notifications using React Toastify library.",
       tech: ["React.js", "Tailwind CSS", "React Toastify"],
-      github: "https://github.com/mrdeepakkushwah/React-Todo-App.git", // fixed URL to your todo app repo (please update if wrong)
+      github: "https://github.com/deepakkhiraofficial/React-Todo-App.git", // fixed URL to your todo app repo (please update if wrong)
       demo: "https://react-todo-app-demo.netlify.app/", // update with actual live demo if available
       period: "Apr 2025",
     },

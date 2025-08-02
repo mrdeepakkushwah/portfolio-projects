@@ -26,7 +26,7 @@ const Contact = () => {
                 <p>
                     🔗{" "}
                     <a
-                        href="https://linkedin.com/in/deepakkhiraofficail"
+                        href="https://linkedin.com/in/deepakkhiraofficial"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-600 hover:underline"
@@ -37,7 +37,7 @@ const Contact = () => {
                 <p>
                     🐱{" "}
                     <a
-                        href="https://github.com/deepakkhiraofficail"
+                        href="https://github.com/deepakkhiraofficial"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-600 hover:underline"
