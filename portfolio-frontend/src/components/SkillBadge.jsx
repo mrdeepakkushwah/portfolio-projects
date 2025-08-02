@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ResumeDownloadButton from '../pages/Resume'; // adjust path if needed
 
 const SkillBadge = () => {
-    // Animation controls
     const controls = useAnimation();
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
@@ -11,7 +11,6 @@ const SkillBadge = () => {
         if (inView) controls.start("visible");
     }, [controls, inView]);
 
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -29,7 +28,7 @@ const SkillBadge = () => {
     };
 
     return (
-        <section id="skills" className="py-16 px-4 bg-gray-50">
+        <section id="skills" className="py-16 px-4 bg-gray-50 relative">
             <div className="max-w-6xl mx-auto">
                 <motion.h2
                     ref={ref}
@@ -57,16 +56,21 @@ const SkillBadge = () => {
                             Frontend Development
                         </h3>
                         <div className="flex flex-wrap gap-2">
-                            {["HTML", "CSS", "Bootstrap", "JavaScript", "React.js", "Redux"].map(
-                                (skill) => (
-                                    <span
-                                        key={skill}
-                                        className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm hover:scale-105 transition"
-                                    >
-                                        {skill}
-                                    </span>
-                                )
-                            )}
+                            {[
+                                "HTML",
+                                "CSS",
+                                "Bootstrap",
+                                "JavaScript",
+                                "React.js",
+                                "Redux",
+                            ].map((skill) => (
+                                <span
+                                    key={skill}
+                                    className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm hover:scale-105 transition"
+                                >
+                                    {skill}
+                                </span>
+                            ))}
                         </div>
                     </motion.div>
 
@@ -79,14 +83,16 @@ const SkillBadge = () => {
                             Backend Development
                         </h3>
                         <div className="flex flex-wrap gap-2">
-                            {["Node.js", "Express.js", "RESTful APIs", "Axios"].map((skill) => (
-                                <span
-                                    key={skill}
-                                    className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm hover:scale-105 transition"
-                                >
-                                    {skill}
-                                </span>
-                            ))}
+                            {["Node.js", "Express.js", "RESTful APIs", "Axios"].map(
+                                (skill) => (
+                                    <span
+                                        key={skill}
+                                        className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm hover:scale-105 transition"
+                                    >
+                                        {skill}
+                                    </span>
+                                )
+                            )}
                         </div>
                     </motion.div>
 
@@ -141,7 +147,7 @@ const SkillBadge = () => {
                     <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                         Achievements & Strengths
                     </h3>
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className="flex flex-wrap justify-center gap-4 mb-6">
                         {[
                             "Problem Solving",
                             "Team Collaboration",
@@ -159,6 +165,12 @@ const SkillBadge = () => {
                         ))}
                     </div>
                 </motion.div>
+
+            </div>
+
+            {/* Floating Resume Download Button fixed bottom-right */}
+            <div className="fixed bottom-6 right-6 z-50">
+                {/* <ResumeDownloadButton /> */}
             </div>
         </section>
     );

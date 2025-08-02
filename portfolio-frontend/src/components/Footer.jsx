@@ -27,7 +27,7 @@ const Footer = () => {
     },
     {
       icon: <FaFilePdf className="text-xl" />,
-      url: "/Deepak_Kushwah_ Resume.pdf",
+      url: "/Deepak_Kushwah_Resume.pdf",  // No spaces in filename or replace spaces with %20
       label: "Resume"
     }
   ];
@@ -35,9 +35,9 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-100 py-12 min-h-[220px]">
       <div className="container mx-auto px-4 min-h-[220px]">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <nav className="flex flex-col md:flex-row justify-between items-center" aria-label="Footer navigation">
           {/* Logo and copyright */}
-          <div className="mb-6">
+          <div className="mb-6 text-center md:text-left">
             <Link
               to="/"
               className="text-2xl font-bold text-white hover:text-blue-300 transition"
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
 
           {/* Quick links */}
-          <div className="mb-6">
+          <div className="mb-6 text-center md:text-left">
             <h3 className="text-white font-medium mb-3">Quick Links</h3>
             <div className="flex flex-col space-y-2">
               <Link
@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
 
           {/* Contact info */}
-          <div className="mb-6">
+          <address className="mb-6 not-italic text-center md:text-left">
             <h3 className="text-white font-medium mb-3">Contact</h3>
             <div className="flex flex-col space-y-2 text-sm">
               <a
@@ -91,12 +91,12 @@ const Footer = () => {
                 +91 9109001109
               </a>
             </div>
-          </div>
+          </address>
 
           {/* Social links */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-white font-medium mb-3">Connect</h3>
-            <div className="flex space-x-4">
+            <div className="flex justify-center md:justify-start space-x-4">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
@@ -111,7 +111,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-        </div>
+        </nav>
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
