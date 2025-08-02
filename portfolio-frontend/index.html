@@ -4,7 +4,7 @@
     <!-- Charset and Viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  
     <!-- Preconnect and Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,34 +13,35 @@
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
     </noscript>
-
-    <!-- Preload Image -->
-    <link
-      rel="preload"
-      as="image"
-      href="/profile.jpg"
-      imagesrcset="/profile.jpg 1x, /profile@2x.jpg 2x"
-      imagesizes="(max-width: 768px) 100vw, 371px"
-    />
-
+  
+    <!-- Preload Critical CSS & JS -->
+    <link rel="preload" as="style" href="/assets/index--z2X_RnF.css" />
+    <link rel="stylesheet" href="/assets/index--z2X_RnF.css" />
+    <link rel="preload" as="script" href="/assets/index-Ce6I-N9B.js" />
+  
+    <!-- Preload Profile Images -->
+    <link rel="preload" as="image" href="/profile.jpg" imagesrcset="/profile.jpg 1x, /profile@2x.jpg 2x" imagesizes="(max-width: 768px) 100vw, 371px" />
+    <link rel="preload" as="image" href="/profile.webp" imagesrcset="/profile.webp 1x, /profile@2x.webp 2x" imagesizes="(max-width: 768px) 100vw, 371px" />
+  
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="/profile.jpg" />
-
-    <!-- Title and Description -->
+  
+    <!-- Title and Meta Tags for SEO -->
     <title>Deepak Kushwah | Full Stack Developer Portfolio</title>
     <meta name="description" content="Official portfolio of Deepak Kushwah – Full Stack Developer specializing in MERN stack, Node.js, React, MongoDB.">
-    <meta name="keywords" content="Deepak Kushwah, Full Stack Developer, MERN Developer, React, Node.js, MongoDB, Portfolio">
+    <meta name="keywords" content="Deepak Kushwah, Full Stack Developer, MERN Developer, React, Node.js, MongoDB, JavaScript Developer, Web Developer Portfolio">
     <meta name="author" content="Deepak Kushwah">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://deepakkhiraofficial.netlify.app">
-
-    <!-- Open Graph Tags -->
+  
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Deepak Kushwah | Full Stack Developer Portfolio">
     <meta property="og:description" content="Official site of Deepak Kushwah – MERN stack developer.">
     <meta property="og:image" content="https://deepakkhiraofficial.netlify.app/profile.jpg">
     <meta property="og:url" content="https://deepakkhiraofficial.netlify.app">
     <meta property="og:type" content="website" />
-
+    <meta property="og:locale" content="en_IN" />
+  
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Deepak Kushwah | Full Stack Developer Portfolio">
@@ -48,27 +49,38 @@
     <meta name="twitter:image" content="https://deepakkhiraofficial.netlify.app/profile.jpg">
     <meta name="twitter:site" content="@mrdeepakkushwah">
     <meta name="twitter:creator" content="@mrdeepakkushwah">
-
+  
+    <!-- Extra SEO Enhancements -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="format-detection" content="telephone=no">
+  
     <!-- Theme and Verification -->
     <meta name="theme-color" content="#000000">
     <meta name="google-site-verification" content="w82R7WzR0qzxSW09B13a2lToFEPFSOjkp7-U9SEIPMc" />
-
-    <link 
-  rel="preload" 
-  as="image" 
-  href="/profile.jpg" 
-  imagesrcset="/profile.jpg 1x, /profile@2x.jpg 2x" 
-  imagesizes="(max-width: 768px) 100vw, 371px" 
-/>
-<link 
-  rel="preload" 
-  as="image" 
-  href="/profile.webp" 
-  imagesrcset="/profile.webp 1x, /profile@2x.webp 2x" 
-  imagesizes="(max-width: 768px) 100vw, 371px" 
-/>
-
+  
+    <!-- Structured Data for Rich Results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Deepak Kushwah",
+        "jobTitle": "Full Stack Developer",
+        "url": "https://deepakkhiraofficial.netlify.app",
+        "image": "https://deepakkhiraofficial.netlify.app/profile.jpg",
+        "sameAs": [
+          "https://github.com/mrdeepakkushwah",
+          "https://www.linkedin.com/in/mrdeepakkushwah/",
+          "https://twitter.com/mrdeepakkushwah"
+        ],
+        "description": "Full Stack Developer specializing in MERN stack, JavaScript, and building scalable web applications."
+      }
+    </script>
   </head>
+  
   <body>
     <div id="root">
       <div class="skeleton-loader"></div>
