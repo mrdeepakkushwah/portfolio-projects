@@ -10,17 +10,19 @@ const Home = () => {
         <div className="max-w-4xl mx-auto">
           {/* Profile Image */}
           <div className="flex justify-center mb-6">
-            <img
-              src="/profile.jpg"
-              srcSet="/profile.jpg 300w, /profile.jpg 600w, /profile.jpg 900w"
-              sizes="(max-width: 600px) 300px, (max-width: 900px) 600px, 900px"
-              width="300"
-              height="300"
-              alt="Deepak Kushwah"
-              className="rounded-full shadow-lg border-2 border-gray-200"
-              loading="lazy"
-              fetchPriority="high"  
-            />
+            <picture>
+              <source srcSet="/profile.webp" type="image/webp/jpg" />
+              <img
+                src="/profile.jpg"
+                width="371"
+                height="445"
+                alt="Deepak Kushwah"
+                className="rounded-full shadow-lg border-2 border-gray-200"
+                loading="lazy"
+                fetchPriority="high"
+              />
+            </picture>
+
 
 
           </div>

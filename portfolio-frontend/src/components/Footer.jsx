@@ -33,11 +33,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-100 py-12">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gray-900 text-gray-100 py-12 min-h-[220px]">
+      <div className="container mx-auto px-4 min-h-[220px]">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo and copyright */}
-          <div className="mb-6 md:mb-0">
+          <div className="mb-6">
             <Link
               to="/"
               className="text-2xl font-bold text-white hover:text-blue-300 transition"
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
 
           {/* Quick links */}
-          <div className="mb-6 md:mb-0">
+          <div className="mb-6">
             <h3 className="text-white font-medium mb-3">Quick Links</h3>
             <div className="flex flex-col space-y-2">
               <Link
@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
 
           {/* Contact info */}
-          <div className="mb-6 md:mb-0">
+          <div className="mb-6">
             <h3 className="text-white font-medium mb-3">Contact</h3>
             <div className="flex flex-col space-y-2 text-sm">
               <a
