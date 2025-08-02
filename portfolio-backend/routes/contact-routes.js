@@ -1,6 +1,6 @@
 import express from "express";  
 const router = express.Router();
-import contact from "../controller/contact-controller.js";
+import contact from "../controller/contact-controller";
 
 // POST route for contact form submission
 router.post("/", contact);
