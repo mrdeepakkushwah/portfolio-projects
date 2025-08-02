@@ -5,7 +5,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
-import contactRoutes from "./routes/contact-routes";
+import contactRoutes from "./routes/contact-routes.js";
 
 // Load environment variables
 
