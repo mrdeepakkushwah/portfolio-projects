@@ -1,0 +1,106 @@
+{
+  "_ReactToastify-CSKArPOx.js": {
+    "file": "assets/ReactToastify-CSKArPOx.js",
+    "name": "ReactToastify",
+    "imports": [
+      "index.html"
+    ],
+    "css": [
+      "assets/ReactToastify-GNLSjkBZ.css"
+    ]
+  },
+  "_ReactToastify-GNLSjkBZ.css": {
+    "file": "assets/ReactToastify-GNLSjkBZ.css",
+    "src": "_ReactToastify-GNLSjkBZ.css"
+  },
+  "_react-BP0qhIbX.js": {
+    "file": "assets/react-BP0qhIbX.js",
+    "name": "react"
+  },
+  "index.html": {
+    "file": "assets/index-CDnekmL5.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_react-BP0qhIbX.js"
+    ],
+    "dynamicImports": [
+      "src/pages/Home.jsx",
+      "src/pages/About.jsx",
+      "src/pages/Projects.jsx",
+      "src/components/SkillBadge.jsx",
+      "src/pages/Contact.jsx",
+      "src/pages/Achievements.jsx"
+    ],
+    "css": [
+      "assets/index-Byh4cFFK.css"
+    ]
+  },
+  "src/assets/Deepak_Kushwah_ Resume.pdf": {
+    "file": "assets/Deepak_Kushwah_ Resume-zDYNh9K0.pdf",
+    "src": "src/assets/Deepak_Kushwah_ Resume.pdf"
+  },
+  "src/components/SkillBadge.jsx": {
+    "file": "assets/SkillBadge-DjUV1inm.js",
+    "name": "SkillBadge",
+    "src": "src/components/SkillBadge.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_ReactToastify-CSKArPOx.js",
+      "_react-BP0qhIbX.js"
+    ]
+  },
+  "src/pages/About.jsx": {
+    "file": "assets/About-CH60VCtX.js",
+    "name": "About",
+    "src": "src/pages/About.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_react-BP0qhIbX.js"
+    ]
+  },
+  "src/pages/Achievements.jsx": {
+    "file": "assets/Achievements-DkDepg8K.js",
+    "name": "Achievements",
+    "src": "src/pages/Achievements.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_react-BP0qhIbX.js"
+    ]
+  },
+  "src/pages/Contact.jsx": {
+    "file": "assets/Contact-DrrdI_9f.js",
+    "name": "Contact",
+    "src": "src/pages/Contact.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_ReactToastify-CSKArPOx.js",
+      "_react-BP0qhIbX.js"
+    ]
+  },
+  "src/pages/Home.jsx": {
+    "file": "assets/Home-BkbjuElf.js",
+    "name": "Home",
+    "src": "src/pages/Home.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_react-BP0qhIbX.js"
+    ]
+  },
+  "src/pages/Projects.jsx": {
+    "file": "assets/Projects-Al67EQx9.js",
+    "name": "Projects",
+    "src": "src/pages/Projects.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_react-BP0qhIbX.js"
+    ]
+  }
+}

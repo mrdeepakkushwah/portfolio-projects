@@ -1,0 +1,6 @@
+/*    /index.html   200
+    /* 
+  Cache static assets
+  Set correct mime types
+*/
+  Cache-Control: public, max-age=31536000, immutable
