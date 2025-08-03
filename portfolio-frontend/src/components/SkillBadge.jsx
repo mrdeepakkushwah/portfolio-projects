@@ -1,11 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import ResumeDownloadButton from '../pages/Resume'; // adjust path if needed
+import resumePDF from '../assets/Deepak_Kushwah_ Resume.pdf'; // adjust path if needed
+import { toast } from "react-toastify";
 
 const SkillBadge = () => {
+
+
     const controls = useAnimation();
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+    const handleDownload = () => {
+        if (!toast.isActive("download-toast")) {
+            toast.success("Downloading resume...", { toastId: "download-toast" });
+        }
+    };
 
     useEffect(() => {
         if (inView) controls.start("visible");
@@ -147,6 +155,7 @@ const SkillBadge = () => {
                     <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                         Achievements & Strengths
                     </h3>
+                    
                     <div className="flex flex-wrap justify-center gap-4 mb-6">
                         {[
                             "Problem Solving",
@@ -164,14 +173,44 @@ const SkillBadge = () => {
                             </motion.span>
                         ))}
                     </div>
+                  
                 </motion.div>
 
+                <div className="mt-8 flex justify-center">
+                    <motion.a
+                        href={resumePDF}
+                        download="Deepak_Kushwah_Resume.pdf"
+                        onClick={handleDownload}
+                        initial={{ x: 100, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, type: "spring" }}
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow-md transition-all active:scale-95"
+                        aria-label="Download Resume"
+                        title="Download Resume"
+                    >
+                        <div className="flex items-center gap-2">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"
+                                />
+                            </svg>
+                            <span>Download Resume</span>
+                        </div>
+                    </motion.a>
+                </div>
+
+
             </div>
 
-            {/* Floating Resume Download Button fixed bottom-right */}
-            <div className="fixed bottom-6 right-6 z-50">
-                {/* <ResumeDownloadButton /> */}
-            </div>
         </section>
     );
 };
