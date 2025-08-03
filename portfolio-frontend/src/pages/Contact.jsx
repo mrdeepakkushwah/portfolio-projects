@@ -14,22 +14,22 @@ import axios from "axios";
 const socialLinks = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/deepakkhiraofficail",
+    url: "https://www.linkedin.com/in/deepakkhiraofficial",
     icon: <FaLinkedin aria-hidden="true" />,
   },
   {
     name: "GitHub",
-    url: "https://github.com/deepakkhiraofficail",
+    url: "https://github.com/deepakkhiraofficial",
     icon: <FaGithub aria-hidden="true" />,
   },
   {
     name: "Facebook",
-    url: "https://www.facebook.com/deepakkhiraofficail/",
+    url: "https://www.facebook.com/deepakkhiraofficial/",
     icon: <FaFacebook aria-hidden="true" />,
   },
   {
     name: "Instagram",
-    url: "https://www.instagram.com/deepakkhiraofficail/",
+    url: "https://www.instagram.com/deepakkhiraofficial/",
     icon: <FaInstagram aria-hidden="true" />,
   },
 ];
@@ -38,13 +38,11 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
-  // Update form fields
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  // Handle form submit with validation & API call
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, message } = formData;
@@ -57,7 +55,7 @@ const Contact = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        'https://deepakkhiraofficial.onrender.com/contact',
+        "https://deepakkhiraofficial.onrender.com/contact",
         { name, email, message },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -142,7 +140,7 @@ const Contact = () => {
         </div>
 
         <div className="bg-white p-8 rounded-xl shadow-md max-w-3xl mx-auto">
-          <ToastContainer autoClose={1500} />
+          <ToastContainer autoClose={1500} toastProps={{ "aria-live": "polite" }} />
           <h3 className="text-2xl font-semibold text-blue-600 mb-6">
             Send Me a Message
           </h3>
@@ -208,9 +206,10 @@ const Contact = () => {
             <button
               type="submit"
               disabled={loading}
+              aria-busy={loading}
+              aria-disabled={loading}
               className={`w-full py-3 rounded-lg text-white font-semibold transition ${loading ? "bg-blue-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
                 }`}
-              aria-busy={loading}
             >
               {loading ? "Sending..." : "Send Message"}
             </button>

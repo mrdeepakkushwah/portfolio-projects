@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import resumePDF from '../assets/Deepak_Kushwah_ Resume.pdf'; // adjust path if needed
+import resumePDF from '/Deepak_Kushwah_ Resume.pdf'; // adjust path if needed
 import { toast } from "react-toastify";
 
 const SkillBadge = () => {

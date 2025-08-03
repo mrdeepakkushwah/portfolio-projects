@@ -8,24 +8,36 @@ const Header = () => {
     const menuRef = useRef(null);
     const toggleBtnRef = useRef(null);
 
+    const navItems = [
+        { path: "about", label: "About" },
+        { path: "projects", label: "Projects" },
+        { path: "skills", label: "Skills" },
+        {
+            path: "achievements",
+            label: "Achievements",
+            icon: <FaTrophy className="text-yellow-500" />,
+        },
+        { path: "contact", label: "Contact" },
+    ];
+
     const toggleMenu = () => {
         setIsMenuOpen((prev) => !prev);
     };
 
-    // Close menu on ESC key press
+    // ESC key closes menu
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === "Escape" && isMenuOpen) {
                 e.preventDefault();
                 setIsMenuOpen(false);
-                toggleBtnRef.current?.focus(); // Return focus to toggle button
+                toggleBtnRef.current?.focus();
             }
         };
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [isMenuOpen]);
 
-    // Close menu when clicking outside
+    // Click outside closes menu
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (
@@ -41,64 +53,50 @@ const Header = () => {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, [isMenuOpen]);
 
-    // Focus trap inside mobile menu
+    // Focus trap for mobile menu
     useEffect(() => {
         if (!isMenuOpen) return;
 
-        const focusableSelectors =
+        const selectors =
             'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-        const menuNode = menuRef.current;
-        const focusableElements = menuNode.querySelectorAll(focusableSelectors);
-        const firstFocusable = focusableElements[0];
-        const lastFocusable = focusableElements[focusableElements.length - 1];
+        const elements = menuRef.current?.querySelectorAll(selectors);
+        const first = elements[0];
+        const last = elements[elements.length - 1];
 
-        // Focus the first focusable element when menu opens
-        firstFocusable?.focus();
+        first?.focus();
 
-        function handleTrapFocus(e) {
+        const trap = (e) => {
             if (e.key !== "Tab") return;
 
-            if (e.shiftKey) {
-                // Shift+Tab
-                if (document.activeElement === firstFocusable) {
-                    e.preventDefault();
-                    lastFocusable.focus();
-                }
-            } else {
-                // Tab
-                if (document.activeElement === lastFocusable) {
-                    e.preventDefault();
-                    firstFocusable.focus();
-                }
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
             }
-        }
-
-        menuNode.addEventListener("keydown", handleTrapFocus);
-        return () => {
-            menuNode.removeEventListener("keydown", handleTrapFocus);
         };
+
+        menuRef.current?.addEventListener("keydown", trap);
+        return () => menuRef.current?.removeEventListener("keydown", trap);
     }, [isMenuOpen]);
 
-    const navItems = [
-        { path: "about", label: "About" },
-        { path: "projects", label: "Projects" },
-        { path: "skills", label: "Skills" },
-        { path: "achievements", label: "Achievements", icon: <FaTrophy className="text-yellow-500" /> },
-        { path: "contact", label: "Contact" },
-    ];
-
-    // Animation variants for mobile menu
     const menuVariants = {
-        hidden: { opacity: 0, y: -20, pointerEvents: "none" },
-        visible: { opacity: 1, y: 0, pointerEvents: "auto", transition: { duration: 0.25 } },
-        exit: { opacity: 0, y: -20, pointerEvents: "none", transition: { duration: 0.2 } },
+        hidden: { opacity: 0, y: -10, pointerEvents: "none" },
+        visible: {
+            opacity: 1,
+            y: 0,
+            pointerEvents: "auto",
+            transition: { duration: 0.2 },
+        },
+        exit: { opacity: 0, y: -10, pointerEvents: "none", transition: { duration: 0.15 } },
     };
 
     return (
         <header className="bg-white shadow-md sticky top-0 z-50">
             <nav
                 className="container mx-auto flex justify-between items-center p-4"
-                aria-label="Primary Navigation"
+                aria-label="Main navigation"
             >
                 {/* Logo */}
                 <NavLink
@@ -109,7 +107,7 @@ const Header = () => {
                     <span className="sm:hidden">DK</span>
                 </NavLink>
 
-                {/* Desktop Navigation */}
+                {/* Desktop Links */}
                 <div className="hidden md:flex space-x-6">
                     {navItems.map(({ path, label, icon }) => (
                         <NavLink
@@ -122,25 +120,24 @@ const Header = () => {
                                 }`
                             }
                         >
-                            {icon && icon}
-                            {label}
+                            {icon} {label}
                         </NavLink>
                     ))}
                 </div>
 
-                {/* Mobile Menu Button */}
+                {/* Mobile Menu Toggle */}
                 <button
                     ref={toggleBtnRef}
-                    className="md:hidden text-gray-700 focus:outline-none"
                     onClick={toggleMenu}
                     aria-label="Toggle menu"
                     aria-expanded={isMenuOpen}
                     aria-controls="mobile-menu"
+                    className="md:hidden text-gray-700 focus:outline-none"
                 >
                     {isMenuOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
                 </button>
 
-                {/* Mobile Menu with animation */}
+                {/* Mobile Menu */}
                 <AnimatePresence>
                     {isMenuOpen && (
                         <motion.div
@@ -168,8 +165,7 @@ const Header = () => {
                                         }
                                         role="menuitem"
                                     >
-                                        {icon && icon}
-                                        {label}
+                                        {icon} {label}
                                     </NavLink>
                                 ))}
                             </div>

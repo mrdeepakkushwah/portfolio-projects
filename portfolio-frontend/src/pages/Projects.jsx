@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
-  // Projects data
   const projects = [
     {
       title: "Simple Banking Application",
@@ -32,7 +31,7 @@ const Projects = () => {
 ✔ Mobile-friendly design`,
       tech: ["HTML", "CSS", "JavaScript", "React.js", "UML"],
       github: "https://github.com/deepakkhiraofficial/Quiz-Application-.git",
-      demo: "https://deepakkhiraofficial.github.io/Quiz-Application-/", // fixed demo to live URL (you may update)
+      demo: "https://deepakkhiraofficial.github.io/Quiz-Application-/",
       period: "Mar 2025",
     },
     {
@@ -40,13 +39,12 @@ const Projects = () => {
       description:
         "React Todo App with CRUD operations: create, update, delete todos, delete all todos, and notifications using React Toastify library.",
       tech: ["React.js", "Tailwind CSS", "React Toastify"],
-      github: "https://github.com/deepakkhiraofficial/React-Todo-App.git", // fixed URL to your todo app repo (please update if wrong)
-      demo: "https://react-todo-app-demo.netlify.app/", // update with actual live demo if available
+      github: "https://github.com/deepakkhiraofficial/React-Todo-App.git",
+      demo: "https://react-todo-app-demo.netlify.app/",
       period: "Apr 2025",
     },
   ];
 
-  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -93,7 +91,7 @@ const Projects = () => {
                   {project.period && (
                     <time
                       className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded"
-                      dateTime={project.period}
+                    // dateTime could be added here if you store ISO dates
                     >
                       {project.period}
                     </time>
@@ -104,7 +102,6 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Tech badges */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
                     <span
@@ -116,14 +113,13 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/* Links */}
                 <nav className="flex gap-4" aria-label={`${project.title} project links`}>
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-blue-700 hover:text-blue-900 transition text-sm"
+                      className="flex items-center gap-1 text-blue-700 hover:text-blue-900 transition text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                     >
                       <FaGithub className="text-base" aria-hidden="true" /> Source Code
                     </a>
@@ -133,7 +129,7 @@ const Projects = () => {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-emerald-600 hover:text-emerald-800 transition text-sm"
+                      className="flex items-center gap-1 text-emerald-600 hover:text-emerald-800 transition text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                     >
                       <FaExternalLinkAlt className="text-base" aria-hidden="true" /> Live Demo
                     </a>

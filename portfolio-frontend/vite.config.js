@@ -14,14 +14,43 @@ export default defineConfig({
       hostname: "https://deepakkhiraofficial.netlify.app",
     }),
 
-    // Inject SEO + JSON-LD structured data
     createHtmlPlugin({
       inject: {
         data: {
-          title: "Deepak Khira Portfolio",
+          title: "Deepak Kushwah Portfolio",
           description: "Deepak Kushwah – Full Stack MERN Developer Portfolio",
         },
         tags: [
+          // Meta viewport
+          {
+            tag: "meta",
+            attrs: {
+              name: "viewport",
+              content: "width=device-width, initial-scale=1",
+            },
+            injectTo: "head",
+          },
+
+          // Robots meta tag
+          {
+            tag: "meta",
+            attrs: {
+              name: "robots",
+              content: "index, follow",
+            },
+            injectTo: "head",
+          },
+
+          // Favicon
+          {
+            tag: "link",
+            attrs: {
+              rel: "icon",
+              href: "/favicon.ico",
+            },
+            injectTo: "head",
+          },
+
           // Preconnects
           {
             tag: "link",
@@ -36,7 +65,7 @@ export default defineConfig({
             attrs: {
               rel: "preconnect",
               href: "https://fonts.gstatic.com",
-              crossorigin: "",
+              crossorigin: "anonymous",
             },
             injectTo: "head",
           },
@@ -67,7 +96,7 @@ export default defineConfig({
             injectTo: "head",
           },
 
-          // ✅ JSON-LD Structured Data
+          // JSON-LD Structured Data with email & telephone
           {
             tag: "script",
             attrs: {
@@ -80,6 +109,8 @@ export default defineConfig({
               jobTitle: "Full Stack Developer",
               url: "https://deepakkhiraofficial.netlify.app",
               image: "https://deepakkhiraofficial.netlify.app/deepak.jpg",
+              email: "mailto:deepakkushwah475110@gmail.com",
+              telephone: "+91-9109001109",
               sameAs: [
                 "https://github.com/deepakkhiraofficial",
                 "https://www.linkedin.com/in/deepakkhiraofficial/",

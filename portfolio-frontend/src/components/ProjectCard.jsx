@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Animation settings (cleaner & reusable)
+// Reusable fadeUp animation
 const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -13,16 +13,18 @@ const ProjectCard = () => {
         {
             id: 1,
             title: "Simple Banking Application",
-            description: "Console-based app with secure transactions. (Java, File Handling)",
+            description: "Console-based app with secure transactions.",
+            tech: ["Java", "File Handling", "OOP"],
             codeUrl: "https://github.com/deepakkhiraofficial/Simple-Bank-Application.git",
-            liveUrl: "https://github.com/deepakkhiraofficial/Simple-Bank-Application.git",
+            liveUrl: null,
         },
         {
             id: 2,
             title: "Random User Data Website",
-            description: "Dynamic UI with Local Storage integration. (JavaScript, Fetch API)",
+            description: "Dynamic UI with Local Storage integration.",
+            tech: ["JavaScript", "Fetch API", "HTML", "CSS"],
             codeUrl: "https://github.com/deepakkhiraofficial/Random-User-Application-.git",
-            liveUrl: "https://github.com/deepakkhiraofficial/Random-User-Application-.git",
+            liveUrl: "https://randomuserapplication.netlify.app/",
         },
     ];
 
@@ -45,7 +47,21 @@ const ProjectCard = () => {
                         <h3 className="text-2xl font-semibold text-gray-800 mb-2">
                             {project.title}
                         </h3>
+
                         <p className="text-gray-600 mb-4">{project.description}</p>
+
+                        {/* Tech badges */}
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {project.tech?.map((tech) => (
+                                <span
+                                    key={tech}
+                                    className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs"
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
+
                         <div className="flex flex-wrap gap-4 mt-4">
                             <a
                                 href={project.codeUrl}
@@ -56,15 +72,18 @@ const ProjectCard = () => {
                             >
                                 GitHub Code
                             </a>
-                            <a
-                                href={project.liveUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-sm text-green-600 hover:underline focus:outline-none focus:ring"
-                                aria-label={`Visit live demo of ${project.title}`}
-                            >
-                                Live Demo
-                            </a>
+
+                            {project.liveUrl && (
+                                <a
+                                    href={project.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm text-green-600 hover:underline focus:outline-none focus:ring"
+                                    aria-label={`Visit live demo of ${project.title}`}
+                                >
+                                    Live Demo
+                                </a>
+                            )}
                         </div>
                     </motion.article>
                 ))}
