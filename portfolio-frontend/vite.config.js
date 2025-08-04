@@ -90,7 +90,7 @@ export default defineConfig({
               as: "image",
               href: "/deepak.jpg",
               fetchpriority: "high",
-              imagesrcset: "/deepak.jpg 1x, /deepak@2x.jpg 2x",
+              imagesrcset: "/deepak.jpg 1x, /deepak.jpg 2x",
               imagesizes: "(max-inline-size: 768px) 100vw, 371px",
             },
             injectTo: "head",
