@@ -63,7 +63,7 @@ const Home = () => {
                   className="rounded-full shadow-lg border-2 border-gray-200"
                   loading="eager"
                   decoding="async"
-                  fetchPriority="high"
+                  fetchpriority="high"
                 />
               </picture>
             </div>

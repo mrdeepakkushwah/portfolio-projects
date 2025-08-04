@@ -4,39 +4,37 @@
     <!-- Charset and Viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-    <!-- Preconnect and Preload Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+
+    <!-- Fonts Preconnect & Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
     </noscript>
-  
+
     <!-- Preload Critical CSS & JS -->
     <link rel="stylesheet" href="dist/assets/index--z2X_RnF.css" />
-    <script type="module" src="/src/main.jsx"></script>
     <link rel="preload" as="script" href="/assets/index-Ce6I-N9B.js" />
-    <link rel="stylesheet" href="dist/assets/index--z2X_RnF.css" />
     <link rel="preload" as="script" href="/src/main.jsx" type="module" crossorigin />
     <link rel="modulepreload" href="/src/main.jsx" />
-  
+
     <!-- Preload Profile Images -->
     <link rel="preload" as="image" href="/profile.jpg" imagesrcset="/profile.jpg 1x, /profile@2x.jpg 2x" imagesizes="(max-inline-size: 768px) 100vw, 371px" />
     <link rel="preload" as="image" href="/profile.webp" imagesrcset="/profile.webp 1x, /profile@2x.webp 2x" imagesizes="(max-inline-size: 768px) 100vw, 371px" />
-  
+
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="/profile.jpg" />
-  
-    <!-- Title and Meta Tags for SEO -->
+
+    <!-- SEO Meta Tags -->
     <title>Deepak Kushwah | Full Stack Developer Portfolio</title>
     <meta name="description" content="Official portfolio of Deepak Kushwah – Full Stack Developer specializing in MERN stack, Node.js, React, MongoDB.">
     <meta name="keywords" content="Deepak Kushwah, Full Stack Developer, MERN Developer, React, Node.js, MongoDB, JavaScript Developer, Web Developer Portfolio">
     <meta name="author" content="Deepak Kushwah">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://deepakkhiraofficial.netlify.app">
-  
+
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Deepak Kushwah | Full Stack Developer Portfolio">
     <meta property="og:description" content="Official site of Deepak Kushwah – MERN stack developer.">
@@ -44,7 +42,7 @@
     <meta property="og:url" content="https://deepakkhiraofficial.netlify.app">
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_IN" />
-  
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Deepak Kushwah | Full Stack Developer Portfolio">
@@ -52,7 +50,7 @@
     <meta name="twitter:image" content="https://deepakkhiraofficial.netlify.app/profile.jpg">
     <meta name="twitter:site" content="@mrdeepakkushwah">
     <meta name="twitter:creator" content="@mrdeepakkushwah">
-  
+
     <!-- Extra SEO Enhancements -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="distribution" content="global" />
@@ -60,12 +58,14 @@
     <meta name="HandheldFriendly" content="true" />
     <meta name="MobileOptimized" content="320" />
     <meta name="format-detection" content="telephone=no">
-  
-    <!-- Theme and Verification -->
     <meta name="theme-color" content="#000000">
-    <meta name="google-site-verification" content="w82R7WzR0qzxSW09B13a2lToFEPFSOjkp7-U9SEIPMc" />
-  
-    <!-- Structured Data for Rich Results -->
+
+    <!-- Site Verification -->
+    <!-- <meta name="google-site-verification" content="w82R7WzR0qzxSW09B13a2lToFEPFSOjkp7-U9SEIPMc" /> -->
+    <meta name="google-site-verification" content="Jb6VMgHrRgThb8hFPRBbEzznu9XxFzWjf9X0L-aUfuw" />
+
+
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -82,52 +82,39 @@
         "description": "Full Stack Developer specializing in MERN stack, JavaScript, and building scalable web applications."
       }
     </script>
-    <!-- Google tag (gtag.js) -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JRNX5YVSSL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-JRNX5YVSSL');
-</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRNX5YVSSL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JRNX5YVSSL');
+    </script>
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WDDJ58WL');</script>
-  <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WDDJ58WL');
+    </script>
   </head>
-  
+
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDDJ58WL"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="root">
       <div class="skeleton-loader"></div>
     </div>
-        <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDDJ58WL"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-
-
+    <!-- App Entry -->
     <script type="module" src="/src/main.jsx"></script>
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Deepak Kushwah",
-        "jobTitle": "Full Stack Developer",
-        "url": "https://deepakkhiraofficial.netlify.app",
-        "sameAs": [
-          "https://github.com/mrdeepakkushwah",
-          "https://www.linkedin.com/in/mrdeepakkushwah/"
-        ]
-      }
-    </script>
   </body>
 </html>
