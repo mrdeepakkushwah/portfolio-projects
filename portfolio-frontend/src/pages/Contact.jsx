@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import {
   FaInstagram,
   FaFacebook,
@@ -77,6 +78,19 @@ const Contact = () => {
       className="py-16 px-4 bg-gray-50"
       aria-labelledby="contact-heading"
     >
+      {/* SEO Metadata for Contact page */}
+      <Helmet>
+        <title>Contact | Deepak Kushwah</title>
+        <meta
+          name="description"
+          content="Contact Deepak Kushwah - Full Stack Developer. Send a message or connect via social media."
+        />
+        <link
+          rel="canonical"
+          href="https://deepakkhiraofficial.netlify.app/contact"
+        />
+      </Helmet>
+
       <div className="max-w-4xl mx-auto">
         <h2
           id="contact-heading"
@@ -187,7 +201,10 @@ const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-gray-700 mb-2 font-medium">
+              <label
+                htmlFor="message"
+                className="block text-gray-700 mb-2 font-medium"
+              >
                 Message
               </label>
               <textarea

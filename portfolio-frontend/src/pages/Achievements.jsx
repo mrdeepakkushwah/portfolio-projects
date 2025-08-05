@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import { FaTrophy, FaCertificate, FaUserTie, FaLaptopCode } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Achievements = () => {
     const achievements = useMemo(() => [
@@ -83,6 +84,11 @@ const Achievements = () => {
             className="py-16 px-4 bg-gray-50"
             aria-label="Achievements and Core Strengths"
         >
+            <Helmet>
+                <title>Achievements | Deepak Khira</title>
+                <link rel="canonical" href="https://deepakkhiraofficial.netlify.app/achievements" />
+            </Helmet>
+
             <div className="max-w-6xl mx-auto">
                 <motion.header
                     initial={{ opacity: 0, y: -20 }}

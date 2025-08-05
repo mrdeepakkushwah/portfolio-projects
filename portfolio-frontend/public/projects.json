@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Simple Banking Application",
+    "description": "Console-based app with secure transactions.",
+    "tech": ["Java", "File Handling", "OOP"],
+    "codeUrl": "https://github.com/deepakkhiraofficial/Simple-Bank-Application.git",
+    "liveUrl": null
+  },
+  {
+    "id": 2,
+    "title": "Random User Data Website",
+    "description": "Dynamic UI with Local Storage integration.",
+    "tech": ["JavaScript", "Fetch API", "HTML", "CSS"],
+    "codeUrl": "https://github.com/deepakkhiraofficial/Random-User-Application-.git",
+    "liveUrl": "https://randomuserapplication.netlify.app/"
+  }
+]

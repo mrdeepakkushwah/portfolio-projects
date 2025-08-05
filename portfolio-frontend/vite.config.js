@@ -1,15 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
 import sitemap from "vite-plugin-sitemap";
-import pages from "vite-plugin-pages";
 import { createHtmlPlugin } from "vite-plugin-html";
 
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(),
-    pages(),
     sitemap({
       hostname: "https://deepakkhiraofficial.netlify.app",
     }),
@@ -21,7 +17,6 @@ export default defineConfig({
           description: "Deepak Kushwah – Full Stack MERN Developer Portfolio",
         },
         tags: [
-          // Meta viewport
           {
             tag: "meta",
             attrs: {
@@ -30,34 +25,19 @@ export default defineConfig({
             },
             injectTo: "head",
           },
-
-          // Robots meta tag
           {
             tag: "meta",
-            attrs: {
-              name: "robots",
-              content: "index, follow",
-            },
+            attrs: { name: "robots", content: "index, follow" },
             injectTo: "head",
           },
-
-          // Favicon
           {
             tag: "link",
-            attrs: {
-              rel: "icon",
-              href: "/favicon.ico",
-            },
+            attrs: { rel: "icon", href: "/favicon.ico" },
             injectTo: "head",
           },
-
-          // Preconnects
           {
             tag: "link",
-            attrs: {
-              rel: "preconnect",
-              href: "https://fonts.googleapis.com",
-            },
+            attrs: { rel: "preconnect", href: "https://fonts.googleapis.com" },
             injectTo: "head",
           },
           {
@@ -69,8 +49,6 @@ export default defineConfig({
             },
             injectTo: "head",
           },
-
-          // Google Fonts (media swap)
           {
             tag: "link",
             attrs: {
@@ -81,8 +59,6 @@ export default defineConfig({
             },
             injectTo: "head",
           },
-
-          // Image preload (LCP)
           {
             tag: "link",
             attrs: {
@@ -95,13 +71,9 @@ export default defineConfig({
             },
             injectTo: "head",
           },
-
-          // JSON-LD Structured Data with email & telephone
           {
             tag: "script",
-            attrs: {
-              type: "application/ld+json",
-            },
+            attrs: { type: "application/ld+json" },
             children: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
@@ -109,8 +81,12 @@ export default defineConfig({
               jobTitle: "Full Stack Developer",
               url: "https://deepakkhiraofficial.netlify.app",
               image: "https://deepakkhiraofficial.netlify.app/deepak.jpg",
-              email: "mailto:deepakkushwah475110@gmail.com",
-              telephone: "+91-9109001109",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+91-9109001109",
+                email: "deepakkushwah475110@gmail.com",
+                contactType: "personal",
+              },
               sameAs: [
                 "https://github.com/deepakkhiraofficial",
                 "https://www.linkedin.com/in/deepakkhiraofficial/",

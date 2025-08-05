@@ -28,12 +28,11 @@ const socialLinks = [
   },
   {
     icon: <FaFilePdf className="text-xl" aria-hidden="true" />,
-    url: "/Deepak_Kushwah_Resume.pdf", // Adjust path if needed
+    url: "/Deepak_Kushwah_Resume.pdf",
     label: "Download Deepak Kushwah's Resume PDF",
   },
 ];
 
-// Animation variants for fade-up effect
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 20 },
   visible: (customDelay = 0) => ({
@@ -48,22 +47,22 @@ const Footer = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
   const location = useLocation();
 
-  // Animate footer on entering viewport
   useEffect(() => {
     if (inView) controls.start("visible");
   }, [controls, inView]);
 
-  // Smooth scroll helper for internal links
   const handleSmoothScroll = (e, to) => {
     e.preventDefault();
     if (location.pathname === "/") {
-      const section = document.querySelector(to);
+      const id = to.startsWith("/") ? to.slice(1) : to;
+      const section = document.getElementById(id);
       if (section) {
-        section.focus({ preventScroll: true }); // Focus for accessibility before scrolling
+        section.tabIndex = -1; // make focusable
+        section.focus({ preventScroll: true });
         section.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     } else {
-      window.location.href = "/" + to;
+      window.location.href = to;
     }
   };
 
@@ -117,10 +116,10 @@ const Footer = () => {
               aria-labelledby="footer-quick-links"
             >
               {[
-                { label: "About Me", to: "about" },
-                { label: "Projects", to: "projects" },
-                { label: "skills", to: "skills" },
-                { label: "Achievements", to: "achievements" },
+                { label: "About Me", to: "/about" },
+                { label: "Projects", to: "/projects" },
+                { label: "Skills", to: "/skills" },
+                { label: "Achievements", to: "/achievements" },
               ].map(({ label, to }) => (
                 <a
                   key={to}

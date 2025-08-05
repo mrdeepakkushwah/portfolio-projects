@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -60,6 +61,15 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-16 px-4 bg-slate-50" aria-label="My Projects">
+      <Helmet>
+        <title>Projects | Deepak Khira</title>
+        <link rel="canonical" href="https://deepakkhiraofficial.netlify.app/projects" />
+        <meta
+          name="description"
+          content="Portfolio projects of Deepak Khira showcasing MERN stack, React, and Java applications."
+        />
+      </Helmet>
+
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -115,6 +125,7 @@ const Projects = () => {
 
                 <nav className="flex gap-4" aria-label={`${project.title} project links`}>
                   {project.github && (
+                 
                     <a
                       href={project.github}
                       target="_blank"
@@ -123,8 +134,10 @@ const Projects = () => {
                     >
                       <FaGithub className="text-base" aria-hidden="true" /> Source Code
                     </a>
+                  
                   )}
                   {project.demo && (
+            
                     <a
                       href={project.demo}
                       target="_blank"
@@ -133,6 +146,7 @@ const Projects = () => {
                     >
                       <FaExternalLinkAlt className="text-base" aria-hidden="true" /> Live Demo
                     </a>
+                   
                   )}
                   {!project.github && !project.demo && (
                     <span className="text-slate-400 text-sm">Demo unavailable</span>

@@ -1,1 +1,12 @@
-/*    /index.html   200
+# ✅ Handle client-side routing (React SPA)
+# Sends all routes to index.html so React Router can take over
+/*    /index.html    200
+
+# 🔁 Optional 301 redirects for removed or outdated pages
+/portfolio     /projects     301
+/resume        /about        301
+/about-me      /about        301
+/contact-me    /contact      301
+/achivement    /achievements 301
+/skills-page   /skills       301
+

@@ -20,6 +20,11 @@ const Header = () => {
         { path: "contact", label: "Contact" },
     ];
 
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+        toggleBtnRef.current?.focus();
+    };
+
     const toggleMenu = () => {
         setIsMenuOpen((prev) => !prev);
     };
@@ -29,8 +34,7 @@ const Header = () => {
         const handleKeyDown = (e) => {
             if (e.key === "Escape" && isMenuOpen) {
                 e.preventDefault();
-                setIsMenuOpen(false);
-                toggleBtnRef.current?.focus();
+                closeMenu();
             }
         };
         window.addEventListener("keydown", handleKeyDown);
@@ -46,7 +50,7 @@ const Header = () => {
                 !menuRef.current.contains(e.target) &&
                 !toggleBtnRef.current.contains(e.target)
             ) {
-                setIsMenuOpen(false);
+                closeMenu();
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -57,8 +61,7 @@ const Header = () => {
     useEffect(() => {
         if (!isMenuOpen) return;
 
-        const selectors =
-            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+        const selectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
         const elements = menuRef.current?.querySelectorAll(selectors);
         const first = elements[0];
         const last = elements[elements.length - 1];
@@ -156,7 +159,7 @@ const Header = () => {
                                     <NavLink
                                         key={path}
                                         to={`/${path}`}
-                                        onClick={() => setIsMenuOpen(false)}
+                                        onClick={closeMenu}
                                         className={({ isActive }) =>
                                             `flex items-center gap-2 ${isActive
                                                 ? "text-blue-600 font-medium"
