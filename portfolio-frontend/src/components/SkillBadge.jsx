@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 
 const SkillBadge = () => {
 
-
     const controls = useAnimation();
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
     const handleDownload = () => {

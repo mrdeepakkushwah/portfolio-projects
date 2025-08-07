@@ -24,16 +24,36 @@ const contact = async (req, res) => {
       .status(400)
       .json({ success: false, error: "Invalid email address." });
   }
+  const nameRegex = /^[A-Za-z][A-Za-z]{1,}/
+  if(isNaN(name) && typeof name === 'string' && nameRegex.test(name)){
+    return res
+      .status(400)
+      .json({ success: false, error: "Invalid name format." }); 
+  }
 
   try {
     const mailOptions = {
       from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
       replyTo: email,
       to: process.env.EMAIL_USER,
-      subject: `New message from ${name}`,
+      subject: `📬 New Portfolio Message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-      // html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong><br/>${message}</p>`,
+      html: `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+          <h2 style="color: #2c3e50;">📬 New Message from Portfolio Contact Form</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #1a73e8;">${email}</a></p>
+          <p><strong>Message:</strong></p>
+          <div style="margin-inline-start: 10px; padding: 10px; background: #ffffff; border: 1px solid #ccc; border-radius: 5px;">
+            ${message.replace(/\n/g, "<br />")}
+          </div>
+          <br/>
+          <hr style="border-block-start: 1px solid #ccc;" />
+          <p style="font-size: 12px; color: #777;">This message was sent from your portfolio website's contact form.</p>
+        </div>
+      `,
     };
+    
 
     const info = await transporter.sendMail(mailOptions);
     console.log("Email sent: ", info.messageId);
