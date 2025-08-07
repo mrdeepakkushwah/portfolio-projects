@@ -1,4 +1,10 @@
 import nodemailer from "nodemailer";
+import {
+  validateName,
+  validateEmail,
+  validateMessage,
+  validateContactForm
+} from "../validation/validater.js"; // Import validation functions if needed
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -8,29 +14,34 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const emailRegex = /^\S+@\S+\.\S+$/;
-
 const contact = async (req, res) => {
   const { name, email, message } = req.body;
 
+    validateContactForm(req.body); // Optional: Validate the entire form if needed
+  // Log the request body for debugging 
+  // Validate input fields
   if (!name || !email || !message) {
     return res
       .status(400)
       .json({ success: false, error: "All fields are required." });
   }
 
-  if (!emailRegex.test(email)) {
+  if (!validateEmail(email)) {
     return res
       .status(400)
       .json({ success: false, error: "Invalid email address." });
   }
-  const nameRegex = /^[A-Za-z][A-Za-z]{1,}/
-  if(isNaN(name) && typeof name === 'string' && nameRegex.test(name)){
+  if (!validateMessage(message)) {
     return res
       .status(400)
-      .json({ success: false, error: "Invalid name format." }); 
+      .json({ success: false, error: "Message must be at least 10 characters long." });
   }
-
+  if (!validateName(name)) {
+    return res
+      .status(400)
+      .json({ success: false, error: "Invalid name format." });
+  }
+  
   try {
     const mailOptions = {
       from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
