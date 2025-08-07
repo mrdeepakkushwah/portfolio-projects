@@ -12,6 +12,8 @@ import morgan from "morgan";
 import contactRoutes from "./routes/contact-routes.js";
 
 const app = express();
+app.set("trust proxy", 1);
+
 const PORT = process.env.PORT || 3500;
 
 const __filename = fileURLToPath(import.meta.url);

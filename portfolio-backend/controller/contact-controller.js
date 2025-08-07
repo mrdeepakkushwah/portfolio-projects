@@ -17,8 +17,13 @@ const transporter = nodemailer.createTransport({
 const contact = async (req, res) => {
   const { name, email, message } = req.body;
 
-    validateContactForm(req.body); // Optional: Validate the entire form if needed
-  // Log the request body for debugging 
+  const formValidationResult = validateContactForm(req.body);
+  if (!formValidationResult.success) {
+    return res
+      .status(400)
+      .json({ success: false, error: formValidationResult.error });
+  }
+  
   // Validate input fields
   if (!name || !email || !message) {
     return res

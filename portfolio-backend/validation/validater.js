@@ -1,16 +1,8 @@
-function validateName(name) {
-  if (typeof name !== "string") return false;
-
+const validateName = (name)=> {
   const trimmedName = name.trim();
 
-  // Allow letters, spaces, hyphens, apostrophes; min 2 chars, starts with letter
-  const nameRegex = /^[A-Za-z][A-Za-z\s'-]{1,}$/;
-
-  if (trimmedName.length < 2) return false;
-  if (isNaN(trimmedName) === false) return false; // numeric string rejection
-  if (!nameRegex.test(trimmedName)) return false;
-
-  return true;
+  const nameRegex = /^[A-Za-z\s]{2,50}$/;
+  return typeof name === "string" && nameRegex.test(name.trim());
 }
 
 function validateEmail(email) {
